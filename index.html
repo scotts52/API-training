@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta import axios from "axios">
+    <title>API page</title>
+</head>
+<body>
+    <button onclick="myFunction()">Click me for APPL</button>
+
+    <script>
+    function myFunction() {
+    const AAPL = 'https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09?adjusted=true&sort=asc&limit=120&apiKey=TLJympvtNXZAuaZsBW_JiIgx_5ocsPtU'
+    function getAPPL(){
+    axios.get(AAPL).then(function (response) {
+    console.log(response.data);
+    })
+    .catch(function (error) {
+    console.log(error);
+    })
+};
+
+getAPPL();
+}
+</script>
+
+</body>
+</html>
